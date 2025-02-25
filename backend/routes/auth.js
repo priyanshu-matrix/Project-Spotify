@@ -126,7 +126,7 @@ router.post("/getuser", fetchuser, async (req, res) => {
 });
 
 //Route-6 :Delete an existing user using: DELETE "/api/auth/deleteuser". Login required
-router.delete("/deleteuser/:id", fetchuser, async (req, res) => {
+router.post("/deleteuser/:id", fetchuser, async (req, res) => {
     try {
         // Find the user to be delete and delete it
         let user = await User.findById(req.params.id);
